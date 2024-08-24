@@ -18,6 +18,10 @@ public class Vendedor {
     @JoinColumn(name = "idVendedor")
     private List<Produto> produtos;
 
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "idEndereco")
+    private Endereco endereco;
+
     public Vendedor() {
         produtos = new ArrayList<Produto>();
     }
@@ -60,6 +64,14 @@ public class Vendedor {
 
     public void setProdutos(List<Produto> produtos) {
         this.produtos = produtos;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     @Override

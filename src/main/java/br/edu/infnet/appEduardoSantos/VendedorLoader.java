@@ -1,6 +1,7 @@
 package br.edu.infnet.appEduardoSantos;
 
 import br.edu.infnet.appEduardoSantos.model.domain.Alimento;
+import br.edu.infnet.appEduardoSantos.model.domain.Endereco;
 import br.edu.infnet.appEduardoSantos.model.domain.Papelaria;
 import br.edu.infnet.appEduardoSantos.model.domain.Vendedor;
 import br.edu.infnet.appEduardoSantos.model.service.VendedorService;
@@ -38,10 +39,21 @@ public class VendedorLoader implements ApplicationRunner {
 
             switch (campos[0].toUpperCase()) {
                 case "V":
+
+                    Endereco endereco = new Endereco();
+                    endereco.setCep(campos[4]);
+                    endereco.setLogradouro(campos[5]);
+                    endereco.setComplemento(campos[6]);
+                    endereco.setBairro(campos[7]);
+                    endereco.setLocalidade(campos[8]);
+                    endereco.setUf(campos[9]);
+
                     vendedor = new Vendedor();
                     vendedor.setNome(campos[1]);
                     vendedor.setTipo(campos[2]);
                     vendedor.setEmail(campos[3]);
+                    vendedor.setEndereco(endereco);
+
                     vendedorService.incluirVendedor(vendedor);
 
 //                    System.out.println("[Vendedor] " + vendedor);
