@@ -1,0 +1,3 @@
+1;salgado e apimentado;5;true
+2;Doce e açucarado;3;true
+3;saboroso e levemente salgado;5;true

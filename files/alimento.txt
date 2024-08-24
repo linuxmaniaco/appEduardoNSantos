@@ -1,0 +1,4 @@
+1;biscoito;true;3;queijo;folse;1
+2;refrigerante;true;15;cola;true;2
+3;guaracamp;true;3;guarana;true;3
+4;salgadinho;true;5;queijo,presunto;false;4

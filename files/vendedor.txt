@@ -1,0 +1,12 @@
+V;Eduardo Santos;admin;linuxmaniaco@gmail.com
+P;1;spiral;Papel Fotográfico glossy;papel brilhante;true;5
+A;4;salgadinho;true;5;queijo,presunto;false
+V;Erika Santos;user;erika.santos2010@gmail.com
+A;1;biscoito;true;3;queijo;folse
+V;Gleiciley silva;admin;gleicileysilva02@gmail.com
+A;2;refrigerante;true;15;cola;true
+A;4;salgadinho;true;5;queijo,presunto;false
+V;Luiza Santos;user;estrelinha.sininho@hotmail.com
+P;2;spiral;Papel Cartao;papel Opaline;true;5
+A;3;guaracamp;true;3;guarana;true
+A;1;biscoito;true;3;queijo;folse

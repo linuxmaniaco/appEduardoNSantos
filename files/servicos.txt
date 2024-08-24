@@ -1,0 +1,6 @@
+1;Xerox;5;cor;0.50;2024-08-13;16:24
+2;Impressao;2;cor;3;2024-08-12;15:00
+3;Curriculo;1;cor;5;2024-08-12;16:00
+4;Impressao;5;preto;5;2024-08-11;10:00
+5;Servico Detran;2;cor;10;2024-08-10;11:00
+6;Antecedente criminal;1;cor;10;2024-08-09;11:00

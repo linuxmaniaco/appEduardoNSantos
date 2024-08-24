@@ -1,0 +1,51 @@
+package br.edu.infnet.appEduardoSantos;
+
+import br.edu.infnet.appEduardoSantos.model.domain.Alimento;
+import br.edu.infnet.appEduardoSantos.model.domain.Papelaria;
+import br.edu.infnet.appEduardoSantos.model.domain.Produto;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+@Component
+public class ProdutoLoader implements ApplicationRunner {
+
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+
+        FileReader produtoFile = new FileReader("files/produto.txt");
+        BufferedReader produtoReader = new BufferedReader(produtoFile);
+        String file = produtoReader.readLine();
+
+        String[] campos = null;
+
+        while(file != null){
+            campos = file.split(";");
+
+            Produto produto = new Produto();
+
+            //POSSÍVEL SOLUÇÃO NESSE CASO DE CLASSE PRODUTO SENDO ABSTRATA
+//            Produto produto;
+//
+//            // Lógica para determinar o tipo de Produto
+//            if () {
+//                produto = new Papelaria();
+//            } else if () {
+//                produto = new Alimento();
+//            } else {
+//                throw new IllegalArgumentException("Tipo de produto desconhecido.");
+//            }
+
+            produto.setCodigo(Integer.parseInt(campos[0]));
+            produto.setDescricao(campos[1]);
+            produto.setPreco(Float.parseFloat(campos[2]));
+            produto.setEstoque(Boolean.parseBoolean(campos[3]));
+
+            System.out.println("[Produto]" + produto);
+            file = produtoReader.readLine();
+        }
+    }
+}
