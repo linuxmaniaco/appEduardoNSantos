@@ -53,7 +53,7 @@ public class PapelariaLoader implements ApplicationRunner {
 
         String marca = "spiral";
         for(Papelaria p : papelariaService.obterPorMarca(marca)){
-            System.err.printf("[PAPELARIA - %s] %s \n", marca,  p);
+            System.out.printf("[PAPELARIA - %s] %s \n", marca,  p);
         }
 
         papelariaReader.close();

@@ -64,7 +64,7 @@ public class AlimentoLoader implements ApplicationRunner {
         Boolean[] tiposAlimentos = {true,false};
         for(Boolean tipo : tiposAlimentos){
             for(Alimento a : alimentoService.obterBebida(tipo)){
-                System.err.println("É BEBIDA? " + (tipo ? "sim " : "não " )+ a);
+                System.out.println("É BEBIDA? " + (tipo ? "sim " : "não " )+ a);
             }
         }
 
