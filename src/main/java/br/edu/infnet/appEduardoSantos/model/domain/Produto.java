@@ -1,6 +1,7 @@
 package br.edu.infnet.appEduardoSantos.model.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -9,7 +10,9 @@ public abstract class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+//    @Column(unique = true)
     private int codigo;
+    @Min(value = 1, message = "Valor do produto maior ou igual a 10")
     private float preco;
     private String descricao;
     private boolean estoque;

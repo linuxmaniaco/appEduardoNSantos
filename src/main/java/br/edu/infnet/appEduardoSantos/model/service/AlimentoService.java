@@ -31,4 +31,8 @@ public class AlimentoService {
     public int obterQtde(){
         return (int) alimentoRepository.count();
     }
+
+    public Collection<Alimento> obterBebida(Boolean bebida){
+        return alimentoRepository.findByBebida(bebida);
+    }
 }

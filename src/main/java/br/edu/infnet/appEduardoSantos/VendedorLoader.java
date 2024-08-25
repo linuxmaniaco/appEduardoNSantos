@@ -94,6 +94,11 @@ public class VendedorLoader implements ApplicationRunner {
         for (Vendedor v : vendedorService.obterVendedor()){
             System.out.println("[Vendedor]" + v);
         }
+
+        String nome = "Eduardo Santos";
+        Vendedor v1 = vendedorService.obterPorNome(nome);
+        System.err.println(v1 + "É o nome do vendedor escolhido");
+
         bufferedReader.close();
     }
 }

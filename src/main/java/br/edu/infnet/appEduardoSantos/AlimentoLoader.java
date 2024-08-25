@@ -9,6 +9,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import javax.swing.text.StyledEditorKit;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
@@ -54,6 +55,17 @@ public class AlimentoLoader implements ApplicationRunner {
 
         for(Alimento a : alimentoService.obterAlimento()){
             System.out.println("[ALIMENTO]" + a);
+        }
+
+        for(Alimento a : alimentoService.obterAlimento()){
+            System.out.println("[ALIMENTOS]" + a);
+        }
+
+        Boolean[] tiposAlimentos = {true,false};
+        for(Boolean tipo : tiposAlimentos){
+            for(Alimento a : alimentoService.obterBebida(tipo)){
+                System.err.println("É BEBIDA? " + (tipo ? "sim " : "não " )+ a);
+            }
         }
 
         alimentoReader.close();

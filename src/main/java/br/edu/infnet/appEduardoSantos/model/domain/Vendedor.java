@@ -1,6 +1,7 @@
 package br.edu.infnet.appEduardoSantos.model.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ public class Vendedor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+//    @NotBlank(message = "Esse campo não pode ser vazio!")
     private String nome;
     private String tipo;
     private String email;

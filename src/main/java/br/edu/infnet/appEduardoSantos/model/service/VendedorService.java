@@ -20,7 +20,12 @@ public class VendedorService {
 
 
     public void incluirVendedor(Vendedor vendedor){
-        vendedorRepository.save(vendedor);
+        try {
+            vendedorRepository.save(vendedor);
+        } catch (Exception e){
+            System.out.println("[ERRO AO INCLUIR VENDEDOR]");
+        }
+
     }
 
     public Collection<Vendedor> obterVendedor(){
@@ -37,5 +42,13 @@ public class VendedorService {
 
     public int obterQtde(){
         return (int) vendedorRepository.count();
+    }
+
+    public Vendedor obterPorNome(String nome){
+        return vendedorRepository.findByNome(nome);
+    }
+
+    public Vendedor obterPorEmail(String email){
+        return vendedorRepository.findByEmail(email);
     }
 }
