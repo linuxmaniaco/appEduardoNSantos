@@ -17,11 +17,11 @@ public class AlimentoService {
         alimentoRepository.save(alimento);
     }
 
-    public Collection<Alimento> obterAlimento(){
+    public Iterable<Alimento> obterAlimento(){
         return alimentoRepository.findAll();
     }
 
-    public Collection<Alimento> obterAlimento(String orderByDetalhes){
+    public Iterable<Alimento> obterAlimento(String orderByDetalhes){
         return alimentoRepository.findAll(Sort.by(Sort.Direction.ASC, orderByDetalhes));
     }
 

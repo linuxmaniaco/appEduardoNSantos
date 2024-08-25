@@ -1,5 +1,6 @@
 package br.edu.infnet.appEduardoSantos.model.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 
@@ -19,6 +20,7 @@ public abstract class Produto {
 
     @ManyToOne
     @JoinColumn(name = "idVendedor")
+    @JsonIgnore
     private Vendedor vendedor;
 
     @Override

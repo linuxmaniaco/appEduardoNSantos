@@ -16,14 +16,10 @@ public class AlimentoController {
     private AlimentoService alimentoService;
 
     @GetMapping(value = "alimento/obter")
-    public Collection<Alimento> obterAlimento(){
+    public Iterable<Alimento> obterAlimento(){
         return alimentoService.obterAlimento();
     }
 
-    @GetMapping(value = "alimento/obterOrdenadoDetalhe")
-    public Collection<Alimento> obterAlimentoOrderByName(){
-        return alimentoService.obterAlimento();
-    }
 
     @GetMapping(value = "alimento/obter/{id}")
     public Alimento obterAlimentoPorId(@PathVariable Integer id){

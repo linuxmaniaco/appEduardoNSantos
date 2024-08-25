@@ -12,5 +12,5 @@ import java.util.List;
 public interface AlimentoRepository extends JpaRepository<Alimento, Integer> {
     Collection<Alimento> findByBebida (Boolean bebida);
 
-    List<Alimento> findAll(Sort orders);
+    List<Alimento> findAll(Sort orderByDetalhes);
 }
