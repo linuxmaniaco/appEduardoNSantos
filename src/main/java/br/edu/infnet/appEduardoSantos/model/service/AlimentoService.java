@@ -3,6 +3,7 @@ package br.edu.infnet.appEduardoSantos.model.service;
 import br.edu.infnet.appEduardoSantos.model.domain.Alimento;
 import br.edu.infnet.appEduardoSantos.model.repository.AlimentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.util.Collection;
 
@@ -18,6 +19,10 @@ public class AlimentoService {
 
     public Collection<Alimento> obterAlimento(){
         return alimentoRepository.findAll();
+    }
+
+    public Collection<Alimento> obterAlimento(String orderByDetalhes){
+        return alimentoRepository.findAll(Sort.by(Sort.Direction.ASC, orderByDetalhes));
     }
 
     public Alimento obterAlimentoPorId(Integer id){

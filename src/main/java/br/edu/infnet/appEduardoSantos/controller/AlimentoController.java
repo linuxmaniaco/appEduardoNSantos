@@ -20,6 +20,11 @@ public class AlimentoController {
         return alimentoService.obterAlimento();
     }
 
+    @GetMapping(value = "alimento/obterOrdenadoDetalhe")
+    public Collection<Alimento> obterAlimentoOrderByName(){
+        return alimentoService.obterAlimento();
+    }
+
     @GetMapping(value = "alimento/obter/{id}")
     public Alimento obterAlimentoPorId(@PathVariable Integer id){
         return alimentoService.obterAlimentoPorId(id);
