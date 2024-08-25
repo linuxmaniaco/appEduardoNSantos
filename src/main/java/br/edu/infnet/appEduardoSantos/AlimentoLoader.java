@@ -1,8 +1,10 @@
 package br.edu.infnet.appEduardoSantos;
 
 import br.edu.infnet.appEduardoSantos.model.domain.Alimento;
+import br.edu.infnet.appEduardoSantos.model.domain.Produto;
 import br.edu.infnet.appEduardoSantos.model.domain.Vendedor;
 import br.edu.infnet.appEduardoSantos.model.service.AlimentoService;
+import br.edu.infnet.appEduardoSantos.model.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -17,6 +19,8 @@ import java.io.FileReader;
 public class AlimentoLoader implements ApplicationRunner {
     @Autowired
     private AlimentoService alimentoService;
+    @Autowired
+    private ProdutoService produtoService;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -54,10 +58,6 @@ public class AlimentoLoader implements ApplicationRunner {
         }
 
         for(Alimento a : alimentoService.obterAlimento()){
-            System.out.println("[ALIMENTO]" + a);
-        }
-
-        for(Alimento a : alimentoService.obterAlimento()){
             System.out.println("[ALIMENTOS]" + a);
         }
 
@@ -66,6 +66,17 @@ public class AlimentoLoader implements ApplicationRunner {
             for(Alimento a : alimentoService.obterBebida(tipo)){
                 System.err.println("É BEBIDA? " + (tipo ? "sim " : "não " )+ a);
             }
+        }
+
+        Integer id = 1;
+        for(Produto p : produtoService.obterProdutosPorVendedor(id)){
+            System.out.println("[PRODUTO POR ID]" + p);
+        }
+
+        Vendedor vendedor = new Vendedor();
+        vendedor.setId(2);
+        for(Produto p : produtoService.obterProdutosPorVendedor(vendedor)){
+            System.out.println("[PRODUTO POR OBJETO]" + p);
         }
 
         alimentoReader.close();

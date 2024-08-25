@@ -1,5 +1,6 @@
 package br.edu.infnet.appEduardoSantos.model.service;
 
+import br.edu.infnet.appEduardoSantos.model.domain.Produto;
 import br.edu.infnet.appEduardoSantos.model.domain.Vendedor;
 import br.edu.infnet.appEduardoSantos.model.repository.VendedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;

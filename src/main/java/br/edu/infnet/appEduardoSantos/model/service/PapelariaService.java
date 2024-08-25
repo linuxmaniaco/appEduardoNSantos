@@ -31,4 +31,8 @@ public class PapelariaService {
     public void excluirPapelariaPorId(Integer id){
         papelariaRepository.deleteById(id);
     }
+
+    public Collection<Papelaria> obterPorMarca(String marca){
+        return papelariaRepository.findByMarcaContaining(marca);
+    }
 }

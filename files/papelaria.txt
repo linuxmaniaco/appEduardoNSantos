@@ -1,4 +1,4 @@
 1;spiral;Papel Fotográfico glossy;papel brilhante;true;5;1
-2;spiral;Papel Cartao;papel Opaline;true;5;2
+2;spiral paper;Papel Cartao;papel Opaline;true;5;2
 3;kraft;Envelope saco;natural 75g 162x229;true;5;4
 4;report;Papel Manteiga;fino transparente;true;5;3
