@@ -82,6 +82,8 @@ public class Vendedor {
                 nome + ";" +
                 tipo + ";" +
                 email + ";" +
-                produtos; // Depois mudar para produtos.size() quando classe produtos retorna valores.
+                produtos.size()+ "; CEP: " +
+                endereco.getCep();
+
     }
 }

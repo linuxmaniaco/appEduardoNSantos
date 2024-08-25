@@ -4,6 +4,7 @@ import br.edu.infnet.appEduardoSantos.model.domain.Alimento;
 import br.edu.infnet.appEduardoSantos.model.domain.Endereco;
 import br.edu.infnet.appEduardoSantos.model.domain.Papelaria;
 import br.edu.infnet.appEduardoSantos.model.domain.Vendedor;
+import br.edu.infnet.appEduardoSantos.model.service.EnderecoService;
 import br.edu.infnet.appEduardoSantos.model.service.VendedorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -20,6 +21,8 @@ public class VendedorLoader implements ApplicationRunner {
 
     @Autowired
     private VendedorService vendedorService;
+    @Autowired
+    private EnderecoService enderecoService;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -40,13 +43,7 @@ public class VendedorLoader implements ApplicationRunner {
             switch (campos[0].toUpperCase()) {
                 case "V":
 
-                    Endereco endereco = new Endereco();
-                    endereco.setCep(campos[4]);
-                    endereco.setLogradouro(campos[5]);
-                    endereco.setComplemento(campos[6]);
-                    endereco.setBairro(campos[7]);
-                    endereco.setLocalidade(campos[8]);
-                    endereco.setUf(campos[9]);
+                    Endereco endereco = enderecoService.obterPorCep(campos[4]);
 
                     vendedor = new Vendedor();
                     vendedor.setNome(campos[1]);
